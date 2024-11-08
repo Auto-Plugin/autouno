@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>autouno dev</title>
+</head>
+
+<body style="padding: 0;margin: 0;">
+  <div id="app" class="main">
+    <div class="center fdc padd20px bg#ddd">
+      <input type="text" id="searchMarch" autocomplete="off" class="padd10 wid200px margin0auto" placeholder="输入以检索匹配">
+      <div class="center padd20px result"></div>
+    </div>
+    <div class="left col#fff bg#1f1f1f padd10 hei30vh">
+      left
+    </div>
+    <div class="center">center</div>
+    <div class="right wit100px ... col#f00">
+      rightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightright
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="/index.ts" type="module">
+</script>
+<script type="module">
+  import findBestMatch from './index.ts'
+  const searchMarch = document.getElementById('searchMarch')
+  const result = document.querySelector('.result')
+  searchMarch.addEventListener('input', function (e) {
+    const value = e.target.value
+    const resultData = findBestMatch(value)
+    result.innerHTML = resultData.join('<br>')
+})
+</script>
+
+</script>

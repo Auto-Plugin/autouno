@@ -1,0 +1,33 @@
+{
+  "name": "autouno",
+  "version": "0.0.5",
+  "description": "autouno 直觉的UnoCSS预设方案",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larryzhu-dev/autouno.git"
+  },
+  "homepage": "https://larryzhu-dev.github.io/autoLarryPages/autouno/",
+  "keywords": [],
+  "author": "Larry Zhu",
+  "devDependencies": {
+    "@unocss/core": "0.64.0",
+    "typescript": "^5.4.2",
+    "unocss": "^0.58.6",
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3"
+  },
+  "license": "MIT"
+}
