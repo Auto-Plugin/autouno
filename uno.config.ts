@@ -20,6 +20,6 @@ export default defineConfig({
     ['start', { display: 'flex', 'justify-content': 'flex-start', 'align-items': 'flex-start' }],
     ['end', { display: 'flex', 'justify-content': 'flex-end', 'align-items': 'flex-end' }],
     ['...', { overflow: 'hidden', 'text-overflow': 'ellipsis', 'white-space': 'nowrap' }],
-    ['fwb', { 'font-weight': 'bold' }]    
+    ['fwb', { 'font-weight': 'bold' }]
   ]
 })

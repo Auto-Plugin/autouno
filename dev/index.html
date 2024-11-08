@@ -4,20 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <title>autouno dev</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
 </head>
 
-<body style="padding: 0;margin: 0;">
-  <div id="app" class="main">
-    <div class="center fdc padd20px bg#ddd">
-      <input type="text" id="searchMarch" autocomplete="off" class="padd10 wid200px margin0auto" placeholder="输入以检索匹配">
-      <div class="center padd20px result"></div>
-    </div>
-    <div class="left col#fff bg#1f1f1f padd10 hei30vh">
-      left
-    </div>
-    <div class="center">center</div>
-    <div class="right wit100px ... col#f00">
-      rightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightrightright
+<body>
+  <div id="app" class="main ove:h wid100vw">
+    <div class="center fdc padd20px bgc#ddd hei100vh">
+      <input type="text" id="searchMarch" autocomplete="off" class="padd10 wid200px" placeholder="输入以检索匹配">
+      <div class="center padd20px flex result">
+        <div class="padd10px minhei100px" id="property">属性：null</div>
+        <div class="padd10px minhei100px" id="unit">单位：null</div>
+      </div>
     </div>
   </div>
 </body>
@@ -26,14 +29,17 @@
 <script src="/index.ts" type="module">
 </script>
 <script type="module">
-  import findBestMatch from './index.ts'
+  import { findBestMatch } from '../src/index'
   const searchMarch = document.getElementById('searchMarch')
+  const propertyEl = document.getElementById('property')
+  const unitEl = document.getElementById('unit')
   const result = document.querySelector('.result')
   searchMarch.addEventListener('input', function (e) {
     const value = e.target.value
-    const resultData = findBestMatch(value)
-    result.innerHTML = resultData.join('<br>')
-})
+    const [property, unit] = findBestMatch(value)
+    propertyEl.innerText = `属性: ${property}`
+    unitEl.innerText = `单位: ${unit}`
+  })
 </script>
 
 </script>
