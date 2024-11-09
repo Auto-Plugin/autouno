@@ -22,6 +22,27 @@
 - padd10
 - wid100vw
 
+### 使用
+
+```shell
+pnpm i autouno
+```
+
+```js
+import { defineConfig } from 'unocss'
+import autoUno from 'autouno'
+
+export default defineConfig({
+  presets: [
+  autoUno([
+    "box-shadow:none",
+  ])], 
+})
+
+```
+
+
+
 
 更多👇
 
