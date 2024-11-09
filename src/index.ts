@@ -3,6 +3,7 @@ import { definePreset, PresetOrFactory } from 'unocss'
 const propertyWithUnit = [
   "animation-delay$ms",
   "animation-duration$ms",
+  "border-radius$px",
   "border-bottom-width$px",
   "border-left-width$px",
   "border-right-width$px",
@@ -16,9 +17,7 @@ const propertyWithUnit = [
   "column-span$px",
   "column-width$px",
   "columns$px",
-  "flex-basis$px",
   "flex-grow$px",
-  "flex-shrink$px",
   "height$px",
   "left$px",
   "letter-spacing$px",
@@ -50,6 +49,8 @@ const propertyWithUnit = [
   "z-index$px",
   "color",
   "background-color",
+  "border-color",
+  "font-size$px",
 ]
 
 const propertyCommon = [
@@ -66,6 +67,7 @@ const propertyCommon = [
   "float: left",
   "float: right",
   "clear: both",
+  "outline: none",
   "overflow: hidden",
   "overflow: scroll",
   "overflow: auto",
@@ -92,7 +94,6 @@ const propertyCommon = [
   "white-space: nowrap",
   "visibility: visible",
   "transform-origin: center",
-  "flex-basis: auto",
   "justify-content: center",
   "justify-content: space-between",
   "align-items: center",

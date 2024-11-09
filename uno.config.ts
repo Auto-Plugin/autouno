@@ -2,7 +2,10 @@ import { defineConfig, presetAttributify, presetUno } from 'unocss'
 import autoUno from './src'
 
 export default defineConfig({
-  presets: [presetAttributify({}), presetUno(), autoUno(['border-radius$px'])],
+  presets: [presetAttributify({}), presetUno(),
+  autoUno([
+    "box-shadow:none",
+  ])], 
   variants: [],
   rules: [
     ['abs', { position: 'absolute' }],
