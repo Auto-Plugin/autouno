@@ -10,14 +10,24 @@
       padding: 0;
       margin: 0;
     }
+
+    input {
+      outline: none;
+      box-shadow: none;
+      border: none;
+    }
   </style>
 </head>
 
 <body>
   <div id="app" class="main ove:h wid100vw">
-    <div class="center fdc padd20px bgc#ddd hei100vh">
-      <input type="text" id="searchMarch" autocomplete="off" class="padd10 wid200px" placeholder="输入以检索匹配">
-      <div class="center padd20px flex result">
+    <div class="center fdc padd20px bgc#1f1f1f hei100vh">
+      <img id="logo" alt="" class="widh100px hei100px marbot10px">
+      <span class="marbot10px colo#fff fz24px">autoUno</span>
+      <span class="marbot60px fz14px colo#ffffff88">直觉的 UnoCss 预设</span>
+      <input type="text" id="searchMarch" autocomplete="off" class="colo#fff padd10 wid200px brrr6px outl:n  bgc#313131 bxs:n"
+        placeholder="输入以检索匹配">
+      <div class="center padd20px flex result colo#fff">
         <div class="padd10px minhei100px" id="property">属性：null</div>
         <div class="padd10px minhei100px" id="unit">单位：null</div>
       </div>
@@ -30,6 +40,8 @@
 </script>
 <script type="module">
   import { findBestMatch } from '../src/index'
+  import imgUrl from '../logo.svg'
+  document.getElementById('logo').src = imgUrl
   const searchMarch = document.getElementById('searchMarch')
   const propertyEl = document.getElementById('property')
   const unitEl = document.getElementById('unit')

@@ -43,6 +43,9 @@ const propertyWithUnit = [
   "z-index$px",
   "color",
   "background-color",
+  "border-color",
+  "font-size$px",
+  "font-weight$",
 ]
 
 const propertyCommon = [
@@ -59,6 +62,7 @@ const propertyCommon = [
   "float: left",
   "float: right",
   "clear: both",
+  "outline: none",
   "overflow: hidden",
   "overflow: scroll",
   "overflow: auto",
@@ -84,7 +88,6 @@ const propertyCommon = [
   "white-space: nowrap",
   "visibility: visible",
   "transform-origin: center",
-  "flex-basis: auto",
   "justify-content: center",
   "justify-content: space-between",
   "align-items: center",
