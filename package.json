@@ -1,6 +1,6 @@
 {
   "name": "autouno",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "autouno 直觉的 UnoCSS 预设方案",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
