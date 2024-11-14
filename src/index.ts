@@ -1,17 +1,12 @@
 import { definePreset, PresetOrFactory } from 'unocss'
 
-const propertyWithUnit = [
+const propertyWithCustomValue = [
   "animation-delay$ms",
   "animation-duration$ms",
   "border-width$px",
   "bottom$px",
   "box-shadow$px",
-  "clip$px",
-  "column-gap$px",
-  "column-rule-width$px",
-  "column-span$px",
-  "column-width$px",
-  "columns$px",
+  "color",
   "height$px",
   "left$px",
   "letter-spacing$px",
@@ -31,7 +26,6 @@ const propertyWithUnit = [
   "padding-right$px",
   "padding-top$px",
   "right$px",
-  "text-indent$px",
   "top$px",
   "transform$px",
   "transform-origin$px",
@@ -41,7 +35,6 @@ const propertyWithUnit = [
   "width$px",
   "word-spacing$px",
   "z-index$px",
-  "color",
   "background-color",
   "border-color",
   "font-size$px",
@@ -72,10 +65,6 @@ const propertyCommon = [
   "text-align: center",
   "text-align: right",
   "font-weight: bold",
-  "font-style: italic",
-  "line-height: normal",
-  "letter-spacing: normal",
-  "text-transform: uppercase",
   "background-position: center",
   "background-repeat: no-repeat",
   "box-sizing: border-box",
@@ -84,7 +73,6 @@ const propertyCommon = [
   "cursor: move",
   "text-decoration: none",
   "text-decoration: underline",
-  "word-wrap: break-word",
   "white-space: nowrap",
   "visibility: visible",
   "transform-origin: center",
@@ -92,22 +80,15 @@ const propertyCommon = [
   "justify-content: space-between",
   "align-items: center",
   "align-self: flex-start",
-  "grid-template-rows: auto",
-  "list-style-type: none",
-  "list-style-position: inside",
   "resize: both",
   "user-select: none",
   "pointer-events: none",
-  "transform-style: preserve-3d",
   "backface-visibility: hidden",
   "scroll-behavior: smooth",
   "text-align-last: center",
   "table-layout: fixed",
   "word-break: break-all",
-  "box-decoration-break: clone",
-  "vertical-align: middle",
   "white-space: normal",
-  "writing-mode: vertical-rl",
   "pointer-events: auto"
 ]
 export function findBestMatch(input: string, customproperty: string[] = []) {
@@ -118,7 +99,7 @@ export function findBestMatch(input: string, customproperty: string[] = []) {
   let maxMatches = 0
 
   // 遍历所有目标字符串
-  for (let keywordOrigin of customproperty.concat(propertyWithUnit.concat(propertyCommon))) {
+  for (let keywordOrigin of customproperty.concat(propertyWithCustomValue.concat(propertyCommon))) {
     const keyword = keywordOrigin.split('$')[0]
     // 用来记录目标字符串的字符序列是否匹配
     let matchCount = 0
@@ -135,8 +116,8 @@ export function findBestMatch(input: string, customproperty: string[] = []) {
         inputIndex++
       }
     }
-    // 如果找到的匹配字符数大于等于 2，且比当前最大匹配数多
-    if (matchCount >= 2 && matchCount > maxMatches) {
+    // 如果找到的匹配字符数大于等于 1，且比当前最大匹配数多
+    if (matchCount >= 1 && matchCount > maxMatches) {
       maxMatches = matchCount
       bestMatch = keywordOrigin
     }
